@@ -10,6 +10,12 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      routes: #Конкретизируем какой микросервис обрабатывает
+        - id: test
+          uri: lb://e-client
+          predicates:
+            - Path=/test/main
+            - Method=GET
 
 eureka:
   client:
