@@ -16,7 +16,11 @@ spring:
           predicates:
             - Path=/test/main
             - Method=GET
-
+        - id: newTest
+          uri: lb://e-client-2
+          predicates:
+            - Path=/new/test
+            - Method=GET
 eureka:
   client:
     service-url:
